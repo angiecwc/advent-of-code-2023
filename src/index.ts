@@ -14,7 +14,7 @@ console.log(`Solving Day #${args[0]}`);
   const puzzleName = args[0];
   try {
     const puzzlePath = `src/days/${puzzleName}`;
-    input = await readFile(`${puzzlePath}/input.txt`);
+    input = (await readFile(`${puzzlePath}/input.txt`)).trim();
   } catch (error) {
     console.error(error);
     process.exit(1);
