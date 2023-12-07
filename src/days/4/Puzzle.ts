@@ -15,6 +15,7 @@ const winningNumsCount = (card: string) => {
   }
   return winning_num_count;
 };
+
 const first = (input: string) => {
   const lines = input.split('\n');
   const cards = lines.map((line) => {
