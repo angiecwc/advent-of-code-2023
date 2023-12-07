@@ -118,6 +118,7 @@ const getMappedRanges = function (mapping: string[]) {
           // Overlaps with map end
           const overlap = sourceMapEnd - sourceRangeStart;
           const nonOverlap = sourceRange - overlap;
+
           outputRanges.push([
             destStart + (sourceRangeStart - sourceMapStart),
             overlap,
@@ -135,16 +136,17 @@ const getMappedRanges = function (mapping: string[]) {
             sourceRangeStart,
             sourceMapStart - sourceRangeStart,
           ]);
+
           newNotFoundRanges.push([sourceMapEnd, sourceRangeEnd - sourceMapEnd]);
         } else {
           // Not found in map
           newNotFoundRanges.push([sourceRangeStart, sourceRange]);
         }
       }
+
       notFoundRanges.splice(0, notFoundRanges.length, ...newNotFoundRanges);
     }
-    // console.log(notFoundRanges);
-    // console.log(outputRanges);
+
     return outputRanges.concat(notFoundRanges);
   };
 };
