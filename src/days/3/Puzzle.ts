@@ -1,4 +1,4 @@
-import { sum, multiply } from '../../utils/reduceUtils';
+import { sum, multiply } from '../../utils/utils';
 
 interface AdjChar {
   c: string;

@@ -1,4 +1,4 @@
-import { sum } from '../../utils/reduceUtils';
+import { sum } from '../../utils/utils';
 
 const winningNumsCount = (card: string) => {
   const card_split = card.split(' | ');

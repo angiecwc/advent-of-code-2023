@@ -1,4 +1,4 @@
-import { multiply } from '../../utils/reduceUtils';
+import { multiply } from '../../utils/utils';
 
 const first = (input: string) => {
   const lines = input.split('\n');

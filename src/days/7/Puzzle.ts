@@ -1,4 +1,4 @@
-import { sum } from '../../utils/reduceUtils';
+import { sum } from '../../utils/utils';
 
 enum HandType {
   HighCard,
@@ -65,14 +65,11 @@ function compareHands(hand1: string, hand2: string, useJoker: boolean): number {
   if (useJoker) {
     type1 = getHandTypeWithJoker(hand1);
     type2 = getHandTypeWithJoker(hand2);
-    // console.log([hand1, type1]);
   } else {
     type1 = getHandType(hand1);
     type2 = getHandType(hand2);
   }
   const diff = type1 - type2;
-
-  // console.log([hand1, type1]);
 
   if (diff === 0) {
     let i = 0;
@@ -96,7 +93,6 @@ const first = (input: string) => {
   }
 
   const sortedHands = hands.sort((a, b) => compareHands(a[0], b[0], false));
-  // console.log(sortedHands);
 
   return sortedHands
     .map((bid, index) => {
@@ -160,7 +156,6 @@ const second = (input: string) => {
   }
 
   const sortedHands = hands.sort((a, b) => compareHands(a[0], b[0], true));
-  console.log(sortedHands.slice(0, 10));
 
   return sortedHands
     .map((bid, index) => {
